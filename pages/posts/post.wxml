@@ -1,0 +1,41 @@
+<!--这里也需要使用相对路径，不能使用绝对路径，而且要带wxml以及后面的反斜杠-->
+<import src="post-item/post-item-template.wxml" />
+
+<!--pages/posts/post.wxml-->
+<!--circular="true"写了这个属性才会有斜街效果，无论false或则true，不写则没有( autoplay="false" 好像也是这样，不知道真机是不是这样)
+    街接滑动：就相当于是循环了，没有街接就是从最后一张到中间在到第一张，在循环，还是不一样的，不懂的看效果
+    官方文档没有的vertical="true"竖直方向的滚动
+    解答问题：使用{{属性值}}就可以让上面的属性起作用，使用"false"是不行的，因为"false"这个string默认也是true
+-->
+<view>
+<!--interval="3000" duration="3000"-->
+    <swiper catchtap='onSwiperTap' indicator-dots="{{true}}" >
+        <swiper-item>
+            <image src="/images/wx.png" data-postid='3'></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/vr.png" data-postid='4'></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/iqiyi.png" data-postid='5'></image>
+        </swiper-item>
+    </swiper>
+
+    <!--必须使用block框起来，否则for不起作用，类似于框的括号
+        现在测试好像也不是必须的，也可以放在view中，之后再看，如果有问题再添加进去
+        模板的使用很好的解决了多处使用模板的问题
+        虽然模板不是在文档中的组件一栏，但是也可以类似于组件
+        模板中只能有wxml和wxss两个文件，不能有js文件，因为不允许在模板中使用js处理
+    -->
+    <block wx:for="{{data_key}}" wx:for-item="item">
+    <!--这下面加view是为了点击的时候触发每个模板，加载template上面是没有效果的，因为template只是一个占位符号，真正渲染到页面上是没有的-->
+        <view catchtap="onPostTab" data-postid="{{item.postId}}">
+            <!--...item作用：把对象中的属性平铺开，如果使用了，在模板中就不需要在添加item了，所有的属性都可以直接使用了-->
+            <template is="postItem" data="{{...item}}" />
+        </view>
+  
+    </block>
+
+</view>
+
+

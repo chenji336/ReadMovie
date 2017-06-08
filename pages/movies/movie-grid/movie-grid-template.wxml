@@ -1,0 +1,14 @@
+<import src='../movie/movie-template.wxml' />
+<template name='movie-grid-template'>
+  <!--<scroll-view scroll-y="true" bindscrolltolower="onScrollToLower"  class="movies-grid-container">-->
+  <!--解决上拉刷新问题，scroll-view跟上拉刷新不能同时使用-->
+  <view class="movies-grid-container">
+    <block wx:for="{{movies}}" wx:for-item="movie">
+      <view class="single-view-container">
+        <template is="movie-template" data="{{...movie}}" />
+      </view>
+    </block>
+
+    <!--</scroll-view>-->
+  </view>
+</template>

@@ -1,0 +1,11 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='container'>
+<!--/代表着根目录，如果没有就是当前目录-->
+   <image src="/images/avatar.png" class="avatar"></image>
+   <text class='minxi'>你好，minxi</text>
+   <view class="journey-continer" bindtap="onTap">
+   <!--bind和catch事件的区别：一个是冒泡，一个没有冒泡，如果需要试验，可以在下面的text加上tap事件自己查看-->
+        <text class='journey'>开启小程序之旅</text>
+   </view>
+</view>
+

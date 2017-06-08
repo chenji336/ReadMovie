@@ -1,0 +1,14 @@
+/*wxss文件如果需要使用也需要进行引入，跟wxml是一样的*/
+@import "post-item/post-item-template.wxss";
+
+/* pages/posts/post.wxss */
+swiper{
+    width:100%;
+    height:600rpx;
+}
+
+image{
+    width:100%;
+    height:600rpx;
+}
+

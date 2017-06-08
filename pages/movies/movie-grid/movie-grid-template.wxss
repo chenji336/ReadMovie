@@ -1,0 +1,12 @@
+@import "../movie/movie-template.wxss";
+
+.single-view-container{
+    float:left;
+    margin-bottom: 40rpx;
+}
+
+.movies-grid-container{
+     margin:40rpx 0 40rpx 9rpx;
+     /*如果使用的不是scroll-view的bindscrolltolower可以不用指定高度*/
+     /*height:1335rpx;*/
+}

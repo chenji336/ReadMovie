@@ -1,0 +1,24 @@
+ <template name="postItem">
+ <!--默认的一些属性wx:for-item="item" wx:for-index="index"-->
+ <!--模板里面是不能有wx:for="{{值}}"的，应该放在模板外面-->
+        <view class="post-container">
+            <view class="post-author-date">
+                <image class="post-author" src="{{avatar}}"></image>
+                <text class="post-date">{{date}}</text>
+            </view>
+
+            <text class="post-title">{{title}}</text>
+            <image class="post-image" src="{{imgSrc}}"></image>
+            <text class="post-content">
+                {{content}}
+            </text>
+
+            <view class="post-like">
+            <!--不要使用相对路径，因为模板要用到很多地方，还是使用绝对路径比较好-->
+                <image class="post-like-image" src="/images/icon/chat.png"></image>
+                <text class="post-like-font">{{reading}}</text>
+                <image class="post-like-image"  src="/images/icon/view.png"></image>
+                <text class="post-like-font">{{collection}}</text>
+            </view>
+        </view>
+</template>
