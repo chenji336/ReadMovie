@@ -3,7 +3,9 @@ App({
   globalData:{
       isPlaying:false,
       playIndex:-1,
-      doubanBaseUrl:'https://api.douban.com'
+      // doubanBaseUrl:'https://api.douban.com' // 已经被豆瓣封了
+      doubanBaseUrl:'http://t.yushu.im' // 测试使用，正式环境需要https
+
   },
   onLaunch: function () {
     
